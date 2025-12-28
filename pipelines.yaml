@@ -1,0 +1,35 @@
+# GoCD Pipeline definitions - see https://github.com/tomzo/gocd-yaml-config-plugin
+format_version: 4
+pipelines:
+  say-hi:
+    group: movies
+    materials:
+      action:
+        plugin_configuration:
+          id: git-path
+        options:
+          url: https://github.com/manav11vanam/sample-pipelines.git
+          path: action
+          shallow_clone: true
+    stages:
+    - build:
+        jobs:
+          build:
+            tasks:
+            - script: ./run.sh one
+  say-hi-manual:
+    group: movies
+    materials:
+      action-manual:
+        plugin_configuration:
+          id: git-path
+        options:
+          url: https://github.com/manav11vanam/sample-pipelines.git
+          path: action
+    stages:
+    - build:
+        approval: manual
+        jobs:
+          build:
+            tasks:
+            - script: ./run.sh two
