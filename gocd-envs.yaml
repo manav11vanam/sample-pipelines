@@ -1,0 +1,6 @@
+format_version: 10
+environments:
+  prod:
+    pipelines:
+    - say-hi
+    - say-hi-manual
