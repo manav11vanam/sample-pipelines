@@ -15,7 +15,11 @@ pipelines:
           build:
             elastic_profile_id: demo-app
             tasks:
-            - script: ./run.sh one
+            - exec:
+                command: bash
+                arguments:
+                - ./run.sh
+                - one
 
   say-hi-manual:
     group: movies
@@ -31,4 +35,8 @@ pipelines:
           build:
             elastic_profile_id: demo-app
             tasks:
-            - script: ./run.sh two
+            - exec:
+                command: bash
+                arguments:
+                - ./run.sh
+                - two
