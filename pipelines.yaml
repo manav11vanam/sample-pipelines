@@ -9,7 +9,6 @@ pipelines:
           id: git-path
         options:
           url: https://github.com/manav11vanam/sample-pipelines.git
-          path: action
           shallow_clone: true
     stages:
     - build:
@@ -25,7 +24,6 @@ pipelines:
           id: git-path
         options:
           url: https://github.com/manav11vanam/sample-pipelines.git
-          path: action
     stages:
     - build:
         approval: manual
