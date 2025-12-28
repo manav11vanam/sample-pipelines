@@ -1,0 +1,107 @@
+format_version: 4
+
+pipelines:
+  dev2:
+    group: search
+    label_template: ${git[:7]}
+    materials:
+      git:
+        git: https://github.com/manav11vanam/sample-pipelines.git
+        branch: main
+
+    stages:
+    - build:
+        approval: manual
+        jobs:
+          build:
+            elastic_profile_id: demo-app
+            tasks:
+            - exec:
+                command: bash
+                arguments:
+                - ./run.sh
+                - two
+
+  dev12:
+    group: search
+    label_template: ${git[:7]}
+    materials:
+      git:
+        git: https://github.com/manav11vanam/sample-pipelines.git
+        branch: main
+
+    stages:
+    - build:
+        approval: manual
+        jobs:
+          build:
+            elastic_profile_id: demo-app
+            tasks:
+            - exec:
+                command: bash
+                arguments:
+                - ./run.sh
+                - dev12
+
+  dev18:
+    group: search
+    label_template: ${git[:7]}
+    materials:
+      git:
+        git: https://github.com/manav11vanam/sample-pipelines.git
+        branch: main
+
+    stages:
+    - build:
+        approval: manual
+        jobs:
+          build:
+            elastic_profile_id: demo-app
+            tasks:
+            - exec:
+                command: bash
+                arguments:
+                - ./run.sh
+                - dev18
+
+  prod1:
+    group: search
+    label_template: ${git[:7]}
+    materials:
+      git:
+        git: https://github.com/manav11vanam/sample-pipelines.git
+        branch: main
+
+    stages:
+    - build:
+        approval: manual
+        jobs:
+          build:
+            elastic_profile_id: demo-app
+            tasks:
+            - exec:
+                command: bash
+                arguments:
+                - ./run.sh
+                - prod1
+
+  prod2:
+    group: search
+    label_template: ${git[:7]}
+    materials:
+      git:
+        git: https://github.com/manav11vanam/sample-pipelines.git
+        branch: main
+
+    stages:
+    - build:
+        approval: manual
+        jobs:
+          build:
+            elastic_profile_id: demo-app
+            tasks:
+            - exec:
+                command: bash
+                arguments:
+                - ./run.sh
+                - prod2

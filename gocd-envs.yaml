@@ -4,3 +4,10 @@ environments:
     pipelines:
     - say-hi
     - say-hi-manual
+    - prod1
+    - prod2
+  stag:
+    pipelines:
+    - dev2
+    - dev12
+    - dev18
