@@ -11,3 +11,10 @@ environments:
     - dev2
     - dev12
     - dev18
+    permissions:
+      view:
+        roles:
+        - dev
+      operate:
+        roles:
+        - dev
