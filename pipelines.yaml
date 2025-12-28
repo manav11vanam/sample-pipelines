@@ -3,8 +3,9 @@ format_version: 10
 pipelines:
   say-hi:
     group: movies
+    label_template: ${git[:7]}
     materials:
-      repo:
+      git:
         git: https://github.com/manav11vanam/sample-pipelines.git
         branch: main
         shallow_clone: true
@@ -23,8 +24,9 @@ pipelines:
 
   say-hi-manual:
     group: movies
+    label_template: ${git[:7]}
     materials:
-      repo:
+      git:
         git: https://github.com/manav11vanam/sample-pipelines.git
         branch: main
 
