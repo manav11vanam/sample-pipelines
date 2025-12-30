@@ -2,9 +2,8 @@ format_version: 4
 
 pipelines:
   git-writer-test:
-    group: platform
+    group: dummy-app
     label_template: ${git[:7]}
-    lock_behavior: unlockWhenFinished
 
     materials:
       git:
@@ -28,13 +27,13 @@ pipelines:
                   set -e
 
                   echo "Before:"
-                  cat manifests/dummy-app/version.txt
+                  cat argocd/dummy-app/version.txt
 
-                  echo "version=$(date +%s)" > manifests/dummy-app/version.txt
+                  echo "version=$(date +%s)" > argocd/dummy-app/version.txt
 
                   git config user.email "gocd@local"
                   git config user.name "GoCD"
 
-                  git add manifests/dummy-app/version.txt
+                  git add argocd/dummy-app/version.txt
                   git commit -m "chore: bump dummy app version"
                   git push origin HEAD:main
