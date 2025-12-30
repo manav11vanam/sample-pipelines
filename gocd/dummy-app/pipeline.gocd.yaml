@@ -1,0 +1,39 @@
+format_version: 4
+
+pipelines:
+  git-writer-test:
+    group: platform
+    label_template: ${git[:7]}
+    lock_behavior: unlockWhenFinished
+
+    materials:
+      git:
+        git: https://github.com/manav11vanam/sample-pipelines.git
+        branch: main
+        shallow_clone: true
+        auto_update: true
+
+    stages:
+    - bump-version:
+        clean_workspace: true
+        jobs:
+          edit-file:
+            tasks:
+            - exec:
+                command: /bin/sh
+                arguments:
+                - -c
+                - |
+                  set -e
+
+                  echo "Before:"
+                  cat manifests/dummy-app/version.txt
+
+                  echo "version=$(date +%s)" > manifests/dummy-app/version.txt
+
+                  git config user.email "gocd@local"
+                  git config user.name "GoCD"
+
+                  git add manifests/dummy-app/version.txt
+                  git commit -m "chore: bump dummy app version"
+                  git push origin HEAD:main
