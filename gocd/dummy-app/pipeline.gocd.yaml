@@ -1,7 +1,7 @@
 format_version: 4
 
 pipelines:
-  git-writer-test:
+  git-writer-test-ssh:
     group: dummy-app
     label_template: ${git[:7]}
 
