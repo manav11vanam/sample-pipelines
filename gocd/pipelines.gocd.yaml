@@ -19,7 +19,7 @@ pipelines:
             - exec:
                 command: bash
                 arguments:
-                - ./run.sh
+                - ./gocd/scripts/run.sh
                 - one
 
   say-hi-manual:
@@ -40,5 +40,5 @@ pipelines:
             - exec:
                 command: bash
                 arguments:
-                - ./run.sh
+                - ./gocd/scripts/run.sh
                 - two
