@@ -36,4 +36,4 @@ pipelines:
 
                   git add argocd/dummy-app/version.txt
                   git commit -m "chore: bump dummy app version"
-                  git push origin HEAD:main
+                  git push https://$GIT_USERNAME:$GIT_PASSWORD@github.com/manav11vanam/sample-pipelines.git HEAD:main
