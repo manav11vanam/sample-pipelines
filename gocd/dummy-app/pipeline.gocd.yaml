@@ -9,8 +9,6 @@ pipelines:
       git:
         git: git@github.com:manav11vanam/sample-pipelines.git
         branch: main
-        shallow_clone: true
-        auto_update: true
 
     stages:
     - bump-version:
