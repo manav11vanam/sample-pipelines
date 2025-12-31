@@ -22,9 +22,11 @@ pipelines:
                 arguments:
                 - -c
                 - |
-                  set -x
-                  echo "HOME=$HOME"
-                  ssh -G git@github.com | grep knownhosts
+                  set -e
+                  ls -ld /home/go /home/go/.ssh
+                  ls -l /home/go/.ssh
+                  stat /home/go/.ssh/known_hosts
+                  ssh -T git@github.com
             # - exec:
             #     command: /bin/sh
             #     arguments:
