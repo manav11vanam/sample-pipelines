@@ -22,7 +22,9 @@ pipelines:
                 arguments:
                 - -c
                 - |
-                  ssh -T git@github.com
+                  set -x
+                  echo "HOME=$HOME"
+                  ssh -G git@github.com | grep knownhosts
             # - exec:
             #     command: /bin/sh
             #     arguments:
