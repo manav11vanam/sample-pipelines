@@ -3,12 +3,12 @@ format_version: 4
 pipelines:
   git-writer-test-ssh:
     group: dummy-app
-    label_template: ${git[:7]}
+    # label_template: ${git[:7]}
 
-    materials:
-      git:
-        git: git@github.com:manav11vanam/sample-pipelines.git
-        branch: main
+    # materials:
+    #   git:
+    #     git: git@github.com:manav11vanam/sample-pipelines.git
+    #     branch: main
 
     stages:
     - bump-version:
