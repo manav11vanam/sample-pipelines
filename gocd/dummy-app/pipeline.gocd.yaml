@@ -23,20 +23,29 @@ pipelines:
                 - -c
                 - |
                   set -e
-                  git fetch origin
-                  git checkout main || git checkout -b main origin/main
+                  ls -ld ~/.ssh
+                  ls -l ~/.ssh
+                  ssh -T git@github.com
+            # - exec:
+            #     command: /bin/sh
+            #     arguments:
+            #     - -c
+            #     - |
+            #       set -e
+            #       git fetch origin
+            #       git checkout main || git checkout -b main origin/main
 
-                  git remote set-url origin git@github.com:manav11vanam/sample-pipelines.git
+            #       git remote set-url origin git@github.com:manav11vanam/sample-pipelines.git
 
-                  echo "Before:"
-                  cat argocd/dummy-app/version.txt
+            #       echo "Before:"
+            #       cat argocd/dummy-app/version.txt
 
-                  echo "version=$(date +%s)" > argocd/dummy-app/version.txt
+            #       echo "version=$(date +%s)" > argocd/dummy-app/version.txt
 
-                  git config user.email "gocd@local"
-                  git config user.name "GoCD"
+            #       git config user.email "gocd@local"
+            #       git config user.name "GoCD"
 
-                  git add argocd/dummy-app/version.txt
-                  git commit -m "chore: bump dummy app version" || echo "Nothing to commit"
+            #       git add argocd/dummy-app/version.txt
+            #       git commit -m "chore: bump dummy app version" || echo "Nothing to commit"
 
-                  git push origin main
+            #       git push origin main
