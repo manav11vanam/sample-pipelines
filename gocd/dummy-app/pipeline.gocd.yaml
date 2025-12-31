@@ -35,4 +35,5 @@ pipelines:
                   git add argocd/dummy-app/version.txt
                   git commit -m "chore: bump dummy app version" || echo "Nothing to commit"
 
+                  git pull --rebase origin main
                   git push origin main
