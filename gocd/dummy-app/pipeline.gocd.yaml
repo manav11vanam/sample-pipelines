@@ -23,9 +23,6 @@ pipelines:
                 - -c
                 - |
                   set -e
-                  ls -ld /home/go /home/go/.ssh
-                  ls -l /home/go/.ssh
-                  stat /home/go/.ssh/known_hosts
                   ssh -T git@github.com
             # - exec:
             #     command: /bin/sh
