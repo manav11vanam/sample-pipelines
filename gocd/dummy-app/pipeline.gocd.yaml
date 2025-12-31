@@ -22,9 +22,6 @@ pipelines:
                 arguments:
                 - -c
                 - |
-                  set -e
-                  ls -ld ~/.ssh
-                  ls -l ~/.ssh
                   ssh -T git@github.com
             # - exec:
             #     command: /bin/sh
