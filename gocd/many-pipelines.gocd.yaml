@@ -71,9 +71,11 @@ pipelines:
 
     stages:
     - build:
-        approval: manual
-        roles:
-        - devops
+        approval:
+          type: manual
+          authorization:
+            roles:
+            - devops
         jobs:
           build:
             tasks:
@@ -93,9 +95,11 @@ pipelines:
 
     stages:
     - build:
-        approval: manual
-        roles:
-        - devops
+        approval:
+          type: manual
+          authorization:
+            roles:
+            - devops
         jobs:
           build:
             tasks:
