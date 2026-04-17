@@ -18,7 +18,7 @@ pipelines:
             - exec:
                 command: bash
                 arguments:
-                - ./run.sh
+                - gocd/scripts/run.sh
                 - two
 
   dev12:
@@ -38,7 +38,7 @@ pipelines:
             - exec:
                 command: bash
                 arguments:
-                - ./run.sh
+                - gocd/scripts/run.sh
                 - dev12
 
   dev18:
@@ -58,7 +58,7 @@ pipelines:
             - exec:
                 command: bash
                 arguments:
-                - ./run.sh
+                - gocd/scripts/run.sh
                 - dev18
 
   prod1:
@@ -73,14 +73,14 @@ pipelines:
     - build:
         approval: manual
         roles:
-          - devops
+        - devops
         jobs:
           build:
             tasks:
             - exec:
                 command: bash
                 arguments:
-                - ./run.sh
+                - gocd/scripts/run.sh
                 - prod1
 
   prod2:
@@ -95,12 +95,12 @@ pipelines:
     - build:
         approval: manual
         roles:
-          - devops
+        - devops
         jobs:
           build:
             tasks:
             - exec:
                 command: bash
                 arguments:
-                - ./run.sh
+                - gocd/scripts/run.sh
                 - prod2
