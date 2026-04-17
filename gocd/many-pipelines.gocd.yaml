@@ -73,8 +73,7 @@ pipelines:
     - build:
         approval:
           type: manual
-          authorization:
-            roles:
+          roles:
             - devops
         jobs:
           build:
@@ -97,8 +96,7 @@ pipelines:
     - build:
         approval:
           type: manual
-          authorization:
-            roles:
+          roles:
             - devops
         jobs:
           build:
