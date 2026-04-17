@@ -15,7 +15,6 @@ pipelines:
         clean_workspace: true
         jobs:
           edit-file:
-            elastic_profile_id: k8s-ssh-agent
             tasks:
             - exec:
                 command: /bin/sh
